@@ -1,0 +1,4 @@
+type: json
+default: 
+entitys: objects
+isSend: 0

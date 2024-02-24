@@ -1,0 +1,4 @@
+type: number
+default: 5
+isSend: 1
+entitys: players,animals,enemys

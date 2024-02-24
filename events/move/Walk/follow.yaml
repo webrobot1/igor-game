@@ -1,0 +1,6 @@
+description: |-
+  следование за указанным объектом (поле key из массива объектов, например enemys_24)
+isPublic: 1
+params:
+    "target":
+    "max_distance":

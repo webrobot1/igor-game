@@ -1,0 +1,6 @@
+description: |-
+    базовое движение. x и y это НАПРАВЛЕНИЕ движения (transform.forward в Unity)
+params:
+    "x":
+    "y":
+isPublic: 1
