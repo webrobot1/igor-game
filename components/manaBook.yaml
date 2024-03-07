@@ -1,3 +1,2 @@
 type: json
-default: 
-isSend: 0
+default: "{}"

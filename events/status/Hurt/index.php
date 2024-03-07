@@ -14,7 +14,7 @@ if($data['hp']>0)
 	$total = $current_hp - $data['hp'];
 	$object->components->add('hp', $total);													// отнимим жизни	
 	
-	if($total && $data['from'] && World::isset($data['from']))
+	if($total && $data['from'] && World::isset($data['from']) && (!$object->components->isset('settings') || $object->components->get('settings')['autoattack']))
 	{
 		$gameObject = World::get($data['from']);
 		if(!is_a($gameObject, Objects::class) && $object::class != $gameObject::class)	    // если нас ранил не объект и это другого типа существо атакуем его

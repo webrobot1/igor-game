@@ -1,2 +1,3 @@
 description: |-
     рукопашная атака в сторону в которую повернут игрок. должна вызваться через fight/attack
+entitys: players,enemys,animals
