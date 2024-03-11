@@ -27,27 +27,31 @@ if(empty(Map2D::getTile($new_position->tile())))
 
 if($object->components->isset('hp') && $object->components->get('hp')>0 
 		&& 
-	World::filter
 	(
-		$new_position
-			,
-		function(EntityAbstract $gameObject):bool
-		{ 
-			// если мы живое существо и нам мешает живое существо
-			if(
-				$gameObject->components->isset('hp')
-					&& 
-				$gameObject->components->get('hp')>0					
-			) 
-				return true; 
-			else
-				return false;
-		}
+		$entitys = World::filter
+		(
+			$new_position
+				,
+			static function(EntityAbstract $gameObject) use($object):bool
+			{ 
+				// если мы живое существо и нам мешает живое существо
+				if(
+					$gameObject->key!=$object->key
+						&&
+					$gameObject->components->isset('hp')
+						&& 
+					$gameObject->components->get('hp')>0					
+				) 
+					return true; 
+				else
+					return false;
+			}
+		)
 	)
 )
 {
 	if(APP_DEBUG)
-		$object->warning("клетка ".(string)$new_position." занята для прохода из события move/walk/index");
+		$object->warning("клетка ".(string)$new_position." занята для прохода (".implode(', ', array_keys($entitys)).") из события move/walk/index");
 	
 	return;	
 }

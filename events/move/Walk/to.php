@@ -81,7 +81,7 @@ if(!is_numeric($data['x']) || !is_numeric($data['y']))
 		$position = $new_position;
 		
 		//todo увеличить таймаут за пройденные лишние клетки за раз
-		$object->events->get('move/walk')->resetTime($object->events->get('move/walk')->timeout*2);	
+		$object->events->get('move/walk')->resetTime($object->events->get('move/walk')->timeout()*2);	
 	}
 	
 	$object->position = $position;

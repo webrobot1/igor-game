@@ -17,5 +17,5 @@ if(!$object->events->get('fight/attack')->action && !$object->events->get('move/
 	
 	// всеравно вешаем событие даже если ходить сейчас некуда (в заблокированной со всех сторон клетке) может потом будет
 	// ходит с разными интервалами
-	$object->events->get('move/randommove')->resetTime(rand(1, 3) * $object->events->get('move/randommove')->timeout);
+	$object->events->get('move/randommove')->resetTime(rand(1, 3) * $object->events->get('move/randommove')->timeout());
 }							
