@@ -22,7 +22,7 @@ if($object->components->isset('hp') && $object->components->get('hp')>0)
 		
 
 		// npc рандомно стреляют магией
-		if(!is_a($object, Players::class))
+		if(!($object instanceOf Players))
 		{
 			if(!rand(0,20))
 				$data['magic'] = ['firebolt', 'icebolt', 'lightbolt'][rand(0,2)];

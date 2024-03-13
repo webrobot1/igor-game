@@ -15,7 +15,7 @@ if(!$object->events->get('fight/attack')->action && !$object->events->get('move/
 			function(EntityAbstract $gameObject) use($key):bool
 			{ 
 				if(
-					(is_a($gameObject, Players::class) || !rand(0, 10))
+					(($gameObject instanceOf Players) || !rand(0, 10))
 						&& 
 					$gameObject->components->isset('hp') 
 						&& 

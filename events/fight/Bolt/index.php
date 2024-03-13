@@ -4,7 +4,7 @@ if(!$object->components->isset('hp') || $object->components->get('hp')>0)
 	$object->action = 'attack';
 	
 	// полный код механики доступен в фаиле php данного события
-	$new_object = new Objects(...[ 
+	$new_object = [ 
 		'prefab' => $data['prefab'], 
 		'lifeRadius' => $object->lifeRadius?:1, 
 		'action' => 'walk', 
@@ -20,10 +20,10 @@ if(!$object->components->isset('hp') || $object->components->get('hp')>0)
 			'speed'=>15,
 			'owner'=>$object->key,
 		)
-	]);	
+	];	
 
 	// добавим сущность на карту (всем разошлется автоматом о появлении нового объекта)
-	World::add($new_object);
+	$new_object = World::add(EntityTypeEnum::Objects, $new_object);
 	
 	// добавим в механику обработки столкновений
 	$new_object->events->add('status/collision', 'bolt');

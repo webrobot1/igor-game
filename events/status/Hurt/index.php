@@ -17,7 +17,7 @@ if($data['hp']>0)
 	if($total && $data['from'] && World::isset($data['from']) && (!$object->components->isset('settings') || $object->components->get('settings')['autoattack']))
 	{
 		$gameObject = World::get($data['from']);
-		if(!is_a($gameObject, Objects::class) && $object::class != $gameObject::class)	    // если нас ранил не объект и это другого типа существо атакуем его
+		if(!($gameObject instanceOf Objects) && $object::class != $gameObject::class)	    // если нас ранил не объект и это другого типа существо атакуем его
 		{	
 			if(empty($object->events->get('fight/attack')->action)) 						// если не атакуем никого то начнем атаковать того кто в нас ранит рукопашкой	
 				$object->events->add('fight/attack', 'index', ['target'=>$data['from']]);			
