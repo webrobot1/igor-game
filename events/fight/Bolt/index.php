@@ -7,6 +7,7 @@ if(!$object->components->isset('hp') || $object->components->get('hp')>0)
 	$new_object = [ 
 		'prefab' => $data['prefab'], 
 		'lifeRadius' => $object->lifeRadius?:1, 
+		'map_id' => MAP_ID, 
 		'action' => 'walk', 
 		'forward_x' => $object->forward->x, 
 		'forward_y' => $object->forward->y, 

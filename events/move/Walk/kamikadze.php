@@ -5,7 +5,7 @@ $new_position = $object->position->next($object->forward);
 // todo в будущем сделаем что может лететь и дальше текущей map_id и был лимит длины полета
 if(empty(Map2D::getTile($new_position->tile())))
 {
-	World::remove($object->key);
+	$object->remove();
 }
 else
 {

@@ -5,6 +5,7 @@ if(!$object->events->get('fight/attack')->action && !$object->events->get('move/
 	$forward = null;
 	$count = 0;
 	
+	
 	// если есть куда идти
 	if($tiles = Map2D::getTile($object->position->tile()))
 	{
