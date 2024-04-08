@@ -1,0 +1,37 @@
+type: json
+default: |-
+    {
+        "firebolt":
+        {
+            "name":"Огненный шар",
+            "description":"Урон огнем", 
+            "mp":1,
+            "group":"fight/attack",
+            "available":1
+        },    
+        "icebolt":
+        {
+            "name":"Ледяная стрела",
+            "description":"Урон холодом", 
+            "mp":2,
+            "group":"fight/attack",
+            "available":1
+        },    
+        "lightbolt":
+        {
+            "name":"Молния",
+            "description":"Урон электричеством", 
+            "mp":3,
+            "group":"fight/attack",
+            "available":1
+        },    
+        "thunderbolt2":
+        {
+            "name":"Заклинание без картинки",
+            "description":"Образец заклинанения без картинки на клиенте", 
+            "mp":4,
+            "group":"fight/attack",
+            "available":1
+        }
+    }
+entitys: players,enemys

@@ -10,7 +10,7 @@ if(World::isset($object->key) && $value<$object->components->get('hpmax'))
 {
 	// если не первое создание сущности и было до момента изменения жизней смены жизней максимально здоровья сбросим таймаут регенерации (запустим отсчет ее по новой с этого момента) - а том можем сразу вылечиться после удара
 	if ($object->components->get('hp')  ==  $object->components->get('hpmax'))
-		$object->events->get("status/regeneration")->resetTimeout();
+		$object->events->get("status/regenerationhp")->resetTimeout();
 
 	if (!$value)
 	{

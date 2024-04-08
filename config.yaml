@@ -1,5 +1,6 @@
 code_type: "php"
-project_id: "rpg2d"
+framework: "rpg2d"
 libraries: ["pathfinding", "entitys"]
+name: "Игорь"
 description: |-
     2D MMORPG игра Игорь создана для демоснтрации работы сервиса (https://github.com/webrobot1/igor-server). С игрой так же идет клиентская часть на игровом двжике Unity (https://github.com/webrobot1/igor-unity) для мобильных устрйоств и ПК. Вы можете изменять код на свое усмотрение, коммерческое использование без согласования запрещено.

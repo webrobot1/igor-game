@@ -1,0 +1,3 @@
+description: |-
+    вешается на существо для регенерации маны.
+entitys: players,enemys,animals

@@ -6,7 +6,8 @@ $object = new NewPlayers(...$data);
 if(APP_DEBUG)
 	$object->log('добавим игроку текущей карты события назначаемые при входе в игру (авто сохранение и дисконнект по таймауту)');
 
-$object->events->add('status/regeneration');
+$object->events->add('status/regenerationhp');
+$object->events->add('status/regenerationmp');
 
 $object->events->add(SystemActionEnum::EVENT_SAVE, from_client: true);
 $object->events->get(SystemActionEnum::EVENT_SAVE)->resetTimeout();				// сбросим обработку события через его таймаут (а то на текущем кадре выполнится и отсоединит игрока)

@@ -1,0 +1,3 @@
+description: |-
+    вешается на существо для регенерации жизней.
+entitys: players,enemys,animals

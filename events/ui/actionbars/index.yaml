@@ -1,0 +1,5 @@
+description: |-
+   Просто перезапишет компонент на какой кнопке что хранится
+isPublic: 1
+params:
+    "actionbars":
