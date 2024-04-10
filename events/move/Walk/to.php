@@ -28,14 +28,15 @@ if(!is_numeric($data['x']) || !is_numeric($data['y']))
 			
 	if(empty($object->buffer['pathFinding']) || end($object->buffer['pathFinding']) != $tile)
 	{
-		// нельзя пройти
+        $start = hrtime(true);     
 		if(!$object->buffer['pathFinding'] = PathFinding::astar($object->position->tile(), $tile))
 		{
 			if(APP_DEBUG)
 				$object->warning("нельзя пройти из ".(string)$object->position." в ".$tile.' из события move/walk/to');
 			
 			return;
-		}	
+		}
+		Perfomance::set('Sandbox        | расчет поиска пути мс.', (hrtime(true) - $start)/1e+6);		
 	}
 	
 	$new_position = new Position(...explode(Position::DELIMETR, $object->buffer['pathFinding'][0]));
