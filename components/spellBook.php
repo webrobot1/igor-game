@@ -25,9 +25,10 @@ foreach($component['default'] as $key=>&$spell)
 }
 
 
-// при создании существа на сцене вышлем его настройки с указанием типов и доп данных или если какое то заклинание появилось или удалилось
-if($object->type == EntityTypeEnum::Players && (!World::isset($object->key) || $current_value!=$spells[$key]))
+// при создании существа на сцене (или авторизации с другого устройства) вышлем его настройки с указанием типов и доп данных или если какое то заклинание появилось или удалилось
+if($object->type == EntityTypeEnum::Players && (!World::isset($object->key) || $current_value!=$spells[$key] || $object->action==SystemActionEnum::ACTION_LOAD))
 {
+	// это съэкономит пакет тк шлется только при входе и авторизации с другого устройства 
 	$object->send(['spellbook'=>$component['default']]);	
 }
 

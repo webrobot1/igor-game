@@ -67,9 +67,10 @@ foreach($component['default'] as $key=>&$setting)
 }
 
 
-// при создании существа на сцене вышлем его настройки с указанием типов и доп данных
-if(!World::isset($object->key))
+// при создании существа на сцене (или если авторизация с другого устройства) вышлем его настройки с указанием типов и доп данных
+if(!World::isset($object->key) || $object->action==SystemActionEnum::ACTION_LOAD)
 {
+	// это съэкономит пакет тк шлется только при входе и авторизации с другого устройства 
 	$object->send(['settings'=>$component['default']]);	
 }
 

@@ -39,7 +39,8 @@ for($i=1;$i<=count($component['default']);$i++)
 		}
 		$current_value[$i] = $value[$i];
 	}
-	elseif(empty($current_value[$i]['type']) || empty($current_value[$i]['id']))
+	// можем слать null значение на кнопку поэтмоу оно может быть array_key_exists, но при этом empty
+	elseif(array_key_exists($i, $value) || empty($current_value[$i]['type']) || empty($current_value[$i]['id']))
 	{
 		$current_value[$i] = ['type'=>'', 'id'=>''];
 	}

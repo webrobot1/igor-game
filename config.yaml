@@ -1,4 +1,5 @@
 code_type: "php"
+image: "http://my-fantasy.ru/theme/custom/frontend/images/games/igor.png"
 framework: "rpg2d"
 libraries: ["pathfinding", "entitys"]
 name: "Игорь"
