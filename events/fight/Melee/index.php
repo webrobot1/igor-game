@@ -20,8 +20,8 @@ if($object->components->isset('hp') && $object->components->get('hp')>0)
 					$gameObject->components->isset('hp') 
 						&& 
 					$gameObject->components->get('hp')>0 
-						&& 						
-					$type != $gameObject->type						
+		//				&& 						
+		//			$type != $gameObject->type						
 				) 
 					return true;
 				else

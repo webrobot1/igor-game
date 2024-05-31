@@ -40,7 +40,9 @@ if($object->components->isset('hp') && $object->components->get('hp')>0
 						&&
 					$gameObject->components->isset('hp')
 						&& 
-					$gameObject->components->get('hp')>0					
+					$gameObject->components->get('hp')>0
+						&&
+					(!($gameObject instanceOf Players) || !($object instanceOf Players))
 				) 
 					return true; 
 				else
